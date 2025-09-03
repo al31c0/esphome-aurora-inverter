@@ -2,16 +2,6 @@
 #include "aurora_monitor.h"
 #include "esphome/core/log.h"
 
-/*
-#if defined(USE_ESP32)
-#define AURORA_SERIAL Serial2
-#elif defined(USE_ESP8266)
-#define AURORA_SERIAL Serial
-#else
-#error Unsupported device
-#endif
-*/
-
 #define AURORA_SERIAL Serial
 
 
