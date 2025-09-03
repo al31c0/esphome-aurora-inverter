@@ -11,6 +11,8 @@
 #error Unsupported device
 #endif
 
+#define AURORA_SERIAL Serial
+
 
 namespace esphome {
 namespace aurora_monitor {
