@@ -2,7 +2,19 @@
 #include "aurora_monitor.h"
 #include "esphome/core/log.h"
 
+#if defined(USE_ESP32)
+#include "soc/soc_caps.h"
+// ESP32-S2 and C3 only have 2 UARTs, so Serial2 does not exist there
+#if SOC_UART_NUM > 2
+#define AURORA_SERIAL Serial2
+#else
+#define AURORA_SERIAL Serial1
+#endif
+#elif defined(USE_ESP8266)
 #define AURORA_SERIAL Serial
+#else
+#error Unsupported device
+#endif
 
 
 namespace esphome {
